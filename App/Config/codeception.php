@@ -17,29 +17,6 @@ if (file_exists(__DIR__.'/codeception-local.php')) {
 }
 
 return array_merge_recursive(array(
-
-    /*
-    |--------------------------------------------------------------------------
-    | Codeception Configurations
-    |--------------------------------------------------------------------------
-    |
-    | This is where you add your Codeception configurations.
-    |
-    | Webception allows you to have access test suites for multiple applications.
-    |
-    | Place them in the order you want and they'll appear in the drop-down list
-    | in the front-end. The first site in the list will become the default
-    | site that's loaded on session load.
-    |
-    | Just add the site name and full path to the 'codeception.yml' below and you're set.
-    |
-    */
-
-    'sites' => array(
-        'Webception'         => dirname(__FILE__) .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'
-            .DIRECTORY_SEPARATOR.'codeception.yml',
-    ),
-
     /*
     |--------------------------------------------------------------------------
     | Execute Codeception as a PHP command
