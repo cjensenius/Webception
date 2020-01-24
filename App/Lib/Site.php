@@ -25,6 +25,8 @@ class Site
      */
     private $hash = FALSE;
 
+    private $vars = [];
+
     /**
      * On construct, prepare the site details and the chosen site.
      *
@@ -67,6 +69,16 @@ class Site
     public function getName()
     {
         return $this->get('name');
+    }
+
+    /**
+     * Return the full path to the Codeception.yml for the current site.
+     *
+     * @return string
+     */
+    public function getVars()
+    {
+        return $this->get('vars');
     }
 
     /**
@@ -150,9 +162,17 @@ class Site
     {
         $filtered = array();
 
-        foreach ($sites as $name => $path) {
+        foreach ($sites as $name => $vars) {
+            if(is_array($vars)) {
+                $path = $vars['path'];
+                unset($vars['path']);
+            } else {
+                $path = $vars;
+                $vars = [];
+            }
             $filtered[md5($name)] = array(
                 'name' => $name,
+                'vars' => $vars,
                 'path' => realpath(dirname($path)) .'/' . basename($path)
             );
         }

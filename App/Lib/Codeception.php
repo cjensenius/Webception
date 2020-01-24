@@ -306,6 +306,10 @@ class Codeception
         if(isset($this->config['run_php']) && $this->config['run_php']) {
             array_unshift($params, "php ");
         }
+        //Check for env vars
+        foreach($this->site->getVars() as $env => $var) {
+            array_unshift($params, "export {$env}='{$var}'; ");
+        }
         //Add Debug command to command line if set in configuration
         if(isset($this->config['debug']) && $this->config['debug']) {
             $params[] = "--debug";
@@ -314,7 +318,6 @@ class Codeception
         if(isset($this->config['steps']) && $this->config['steps']) {
             $params[] = "--steps";
         }
-
         // Build the command to be run.
         return implode(' ', $params);
     }
