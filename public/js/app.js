@@ -794,7 +794,7 @@ APP = {
                             }).html(chosenState.label).appendTo(testResult);
 
             $('<h5/>', {'text': test.title}).appendTo(testResult);
-            $('<pre style="background-color: black; overflow: auto; padding: 10px 15px; font-family: monospace;"/>').html(test.log).appendTo(testResult);
+            $('<pre style="background-color: black; padding: 10px 15px; font-family: monospace;"/>').html(test.log).appendTo(testResult);
             $('<hr>').appendTo(testResult);
 
             testResult.appendTo(consoleContainer);
