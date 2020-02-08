@@ -291,7 +291,6 @@ class Codeception
             array(
                 $this->config['executable'],        // Codeception Executable
                 "run",                              // Command to Codeception
-                "--no-colors",                      // Forcing Codeception to not use colors, if enabled in codeception.yml
                 "--config=\"{$this->site->getConfig()}\"", // Full path & file of Codeception
             ),
             $env,

@@ -1,5 +1,7 @@
 <?php namespace App\Lib;
 
+use voku\AnsiConverter\AnsiToHtmlConverter;
+
 /*
  * This file is part of the Webception package.
  *
@@ -311,7 +313,8 @@ class Test
      */
     public function getLog($format = TRUE)
     {
-        return $format ? implode($this->log, PHP_EOL) : $this->log;
+        $converter = new \voku\AnsiConverter\AnsiToHtmlConverter();
+        return $format ? $converter->convert(implode($this->log, PHP_EOL)) : $this->log;
     }
 
     /**
@@ -321,7 +324,7 @@ class Test
      */
     private function filterLog($line)
     {
-        return str_replace($this->colour_codes, '', $line);
+        return $line; //str_replace($this->colour_codes, '', $line);
     }
 
     /**
