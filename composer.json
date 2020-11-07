@@ -23,7 +23,8 @@
         "aws/aws-sdk-php": "^3.158",
         "react/child-process": "^0.6.1",
         "symfony/polyfill-intl-idn": "v1.17.0",
-        "guzzlehttp/guzzle": "6.5.4"
+        "guzzlehttp/guzzle": "6.5.4",
+        "vlucas/phpdotenv": "^3"
     },
     "autoload": {
         "psr-0": {
