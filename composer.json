@@ -14,12 +14,16 @@
     "license": "MIT",
     "require": {
         "php": ">=7.1",
-        "slim/slim": "2.*",
+        "slim/slim": "^4.0",
         "slim/views": "0.1.*",
-        "twig/twig": "~1.13",
-        "codeception/codeception": "2.*",
-        "symfony/yaml": "2.5.x-dev",
-        "voku/ansi-to-html": "2.1.0"
+        "twig/twig": "^3.0",
+        "codeception/codeception": "3.1.2",
+        "symfony/yaml": "2.7.x-dev",
+        "voku/ansi-to-html": "2.1.0",
+        "aws/aws-sdk-php": "^3.158",
+        "react/child-process": "^0.6.1",
+        "symfony/polyfill-intl-idn": "v1.17.0",
+        "guzzlehttp/guzzle": "6.5.4"
     },
     "autoload": {
         "psr-0": {
